@@ -34,15 +34,4 @@ public class FilmeController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> deletarFilme(@PathVariable Long id){
-        filmeService.deletarFilme(id);
-        return ResponseEntity.noContent().build();
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<FilmeModel> atualizar(@PathVariable Long id, @RequestBody FilmeModel filmeModel){
-        FilmeModel response = filmeService.atualizar(id, filmeModel);
-        return ResponseEntity.status(HttpStatus.CREATED).body(response);
-    }
 }
